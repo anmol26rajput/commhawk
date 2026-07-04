@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -42,3 +43,27 @@ next-env.d.ts
 
 # tool-internal caches
 .impeccable/
+
+# secrets & credentials — never commit these
+*.pem
+*.key
+*.p12
+*.pfx
+*.cer
+*.crt
+*.ppk
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+*.pgp
+*.gpg
+.npmrc
+credentials.json
+*serviceAccount*.json
+*-service-account*.json
+.aws/
+.ssh/
+secrets/
+secrets.*
+*.local.json
