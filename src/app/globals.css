@@ -23,15 +23,20 @@
   --text-display--line-height: 0.94;
   --text-display--letter-spacing: -0.03em;
 
-  --text-h1: 6rem;
+  /* Headings scale down below the lg breakpoint (1200px) via clamp so long
+     unbreakable words (e.g. "engineering", "Businesses") can't overflow
+     narrow viewports — the vw coefficient is tuned so each clamp reaches
+     its original fixed rem value at exactly 1200px, so desktop/lg+ is
+     visually identical to the old fixed sizes. */
+  --text-h1: clamp(2.75rem, 8vw, 6rem);
   --text-h1--line-height: 1.125;
   --text-h1--letter-spacing: -0.03em;
 
-  --text-h2: 4.5rem;
+  --text-h2: clamp(2.25rem, 6vw, 4.5rem);
   --text-h2--line-height: 1.11;
   --text-h2--letter-spacing: -0.03em;
 
-  --text-h3: 2.5rem;
+  --text-h3: clamp(1.75rem, 3.4vw, 2.5rem);
   --text-h3--line-height: 1.15;
   --text-h3--letter-spacing: -0.02em;
 

@@ -32,14 +32,17 @@ export function HeroWordmark({ text, className }: { text: string; className?: st
 
   return (
     <h1 ref={scope} className={className}>
-      <span className="inline-flex overflow-hidden py-1">
+      <span className="inline-flex min-w-0 overflow-hidden py-1">
         {chars.map((char, i) => (
           <span key={i} className="wordmark-char inline-block">
             {char}
           </span>
         ))}
       </span>
-      <span aria-hidden="true" className="cursor-blink ml-3 mb-3 inline-block h-3 w-16 bg-accent sm:h-4 sm:w-24" />
+      <span
+        aria-hidden="true"
+        className="cursor-blink ml-1.5 mb-2 inline-block h-2.5 w-6 shrink-0 bg-accent sm:mb-3 sm:ml-3 sm:h-3 sm:w-16 lg:h-4 lg:w-24"
+      />
     </h1>
   );
 }

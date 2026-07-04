@@ -141,7 +141,7 @@ export function Nav({ hasHero = true }: { hasHero?: boolean }) {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * i, type: "spring", damping: 30, stiffness: 200 }}
-                  className="flex items-baseline gap-4 text-h2 font-medium text-fg hover:text-accent"
+                  className="flex items-baseline gap-3 text-h3 font-medium text-fg hover:text-accent sm:gap-4 sm:text-h2"
                 >
                   <span className="text-label text-fg-32">{link.index}</span>
                   {link.label}

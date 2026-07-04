@@ -71,7 +71,7 @@ export function Hero() {
         <div className="flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-end">
           <HeroWordmark
             text={hero.wordmark}
-            className="flex items-end text-[clamp(3.5rem,11vw,9.5rem)] font-medium leading-[0.94] tracking-[-0.03em] text-fg"
+            className="flex max-w-full items-end text-[clamp(2.25rem,11vw,9.5rem)] font-medium leading-[0.94] tracking-[-0.03em] text-fg"
           />
 
           <Appear delayed className="max-w-sm space-y-4 text-fg-82">

@@ -43,6 +43,8 @@ export const works = [
     status: "Live",
     url: "https://www.thebefin.com/",
     logo: "/logos/befin-logo.avif",
+    // Dominant colors sampled from the logo itself, for the blurred gradient backdrop.
+    colors: ["#000080", "#10b0f0"],
   },
   {
     name: "Trip N Roll Travel",
@@ -53,6 +55,7 @@ export const works = [
     status: "Live",
     url: "https://tripnrolltravel.com/",
     logo: "/logos/tripnroll-logo.png",
+    colors: ["#005050", "#f0d040"],
   },
   {
     name: "Maytri ERP",
@@ -62,6 +65,7 @@ export const works = [
     status: "Live",
     url: "https://maytri.netlify.app/login",
     logo: "/logos/maytri-logo.svg",
+    colors: ["#0284c7", "#0369a1"],
   },
   {
     name: "Bihar Sahu Sabha",
@@ -72,6 +76,7 @@ export const works = [
     status: "Live",
     url: "https://www.bihartailiksahusabha.com/",
     logo: "/logos/biharsahu-logo.png",
+    colors: ["#e06010", "#d03010"],
   },
   {
     name: "Kaamlee",
@@ -82,6 +87,7 @@ export const works = [
     status: "Live",
     url: "https://kaamlee.in/",
     logo: "/logos/kaamlee-logo.png",
+    colors: ["#111111", "#40d080"],
   },
 ] satisfies Array<{
   name: string;
@@ -91,6 +97,7 @@ export const works = [
   status: string;
   url?: string;
   logo: string;
+  colors: [string, string];
 }>;
 
 export const services = [

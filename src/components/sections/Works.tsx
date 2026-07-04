@@ -75,12 +75,21 @@ function ProjectLink({
 }
 
 // Each card shows the project's real logo as a profile-picture-style avatar
-// (rather than a full website screenshot) — a white plate behind the mark so
-// every logo reads cleanly regardless of its own background color.
+// (rather than a full website screenshot), floating over a softly blurred
+// gradient built from that logo's own dominant colors (see content.ts
+// `colors`) — the blur-behind-a-crisp-foreground contrast is what reads as
+// depth/3D rather than a flat sticker.
 function WorkThumbnail({ work }: { work: (typeof works)[number] }) {
+  const [from, to] = work.colors;
   return (
-    <div className="flex aspect-[4/3] w-full items-center justify-center rounded-card bg-surface">
-      <div className="flex h-40 w-40 items-center justify-center rounded-full bg-white p-7 shadow-[0_10px_40px_-6px_rgba(0,0,0,0.5)] sm:h-48 sm:w-48">
+    <div className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-card bg-surface">
+      <div
+        className="absolute inset-0 scale-125 opacity-80 blur-3xl"
+        style={{ background: `radial-gradient(circle at 30% 30%, ${from}, transparent 60%), radial-gradient(circle at 75% 75%, ${to}, transparent 60%)` }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-surface/30" aria-hidden="true" />
+      <div className="relative flex h-40 w-40 items-center justify-center rounded-full bg-white p-7 shadow-[0_20px_60px_-8px_rgba(0,0,0,0.6)] sm:h-48 sm:w-48">
         {/* eslint-disable-next-line @next/next/no-img-element -- fixed external brand logo, not a themable/optimizable local asset. */}
         <img src={work.logo} alt={`${work.name} logo`} className="h-full w-full object-contain" />
       </div>

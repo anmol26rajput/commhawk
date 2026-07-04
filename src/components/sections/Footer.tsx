@@ -63,7 +63,7 @@ export function Footer() {
 
         <div className="mt-20 flex flex-col items-center gap-6 overflow-hidden">
           <p
-            className="pointer-events-none w-full max-w-full truncate text-center text-[18vw] leading-none font-medium tracking-tight select-none sm:text-[14vw] lg:text-[11rem]"
+            className="pointer-events-none w-full max-w-full truncate text-center text-[14vw] leading-none font-medium tracking-tight select-none sm:text-[14vw] lg:text-[11rem]"
             style={{ WebkitTextStroke: "1px var(--color-fg-16)", color: "transparent" }}
             aria-hidden="true"
           >
