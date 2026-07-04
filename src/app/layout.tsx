@@ -13,7 +13,7 @@ const figtree = Figtree({
 });
 
 const siteUrl = "https://www.commhawk.in";
-const siteName = "CommHawk — Engineering Digital Excellence";
+const siteName = "CommHawk - Engineering Digital Excellence";
 const siteDescription =
   "CommHawk is a premier technology partner specializing in high-performance digital products. We help ambitious companies scale through cutting-edge development and innovative AI solutions.";
 

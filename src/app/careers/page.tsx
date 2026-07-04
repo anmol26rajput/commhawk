@@ -6,7 +6,7 @@ import { Footer } from "@/components/sections/Footer";
 export const metadata: Metadata = {
   title: "Careers",
   description:
-    "Join CommHawk — an elite team of engineers, designers, and strategists building digital products that define the next generation of technology.",
+    "Join CommHawk, an elite team of engineers, designers, and strategists building digital products that define the next generation of technology.",
 };
 
 export default function CareersPage() {

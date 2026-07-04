@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { Logo } from "@/components/ui/Logo";
 import { Reveal } from "@/components/ui/Reveal";
 import { services } from "@/data/content";
+import { scrollToY } from "@/lib/smooth-scroll";
 
 function ArrowIcon({ direction }: { direction: "left" | "right" }) {
   return (
@@ -64,11 +65,18 @@ function ServicesPinned() {
     const targetProgress = (index + 0.5) / services.length;
     const targetY = sectionTop + targetProgress * (rect.height - window.innerHeight);
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    window.scrollTo({ top: targetY, behavior: prefersReducedMotion ? "auto" : "smooth" });
+    scrollToY(targetY, { immediate: prefersReducedMotion });
   }
 
-  const isFirst = active === 0;
-  const isLast = active === services.length - 1;
+  // Wraps around in both directions — next from the last category goes to
+  // the first, previous from the first goes to the last.
+  function goToPrevious() {
+    scrollToIndex((active - 1 + services.length) % services.length);
+  }
+  function goToNext() {
+    scrollToIndex((active + 1) % services.length);
+  }
+
   const current = services[active];
 
   return (
@@ -129,10 +137,9 @@ function ServicesPinned() {
           <div className="mt-12 flex items-center gap-4">
             <button
               type="button"
-              onClick={() => scrollToIndex(active - 1)}
-              disabled={isFirst}
+              onClick={goToPrevious}
               aria-label="Previous service"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-fg-32 text-fg transition-colors duration-300 hover:border-fg hover:text-accent disabled:pointer-events-none disabled:opacity-30"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-fg-32 text-fg transition-colors duration-300 hover:border-fg hover:text-accent"
             >
               <ArrowIcon direction="left" />
             </button>
@@ -154,10 +161,9 @@ function ServicesPinned() {
 
             <button
               type="button"
-              onClick={() => scrollToIndex(active + 1)}
-              disabled={isLast}
+              onClick={goToNext}
               aria-label="Next service"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-fg-32 text-fg transition-colors duration-300 hover:border-fg hover:text-accent disabled:pointer-events-none disabled:opacity-30"
+              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-fg-32 text-fg transition-colors duration-300 hover:border-fg hover:text-accent"
             >
               <ArrowIcon direction="right" />
             </button>

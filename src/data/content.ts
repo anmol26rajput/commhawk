@@ -280,13 +280,13 @@ export const services = [
 
 /** CommHawk Synapse — the company's internal autonomous-engineering capability set. */
 export const process = {
-  heading: "CommHawk Synapse — the autonomous engineering core behind every build",
+  heading: "CommHawk Synapse powers the autonomous engineering core behind every build",
   capabilities: [
     {
       step: "S1",
       title: "System Audit",
       description:
-        "We start by mapping what's already there — architecture, data flow, and technical debt — before writing a single line of new code.",
+        "We start by mapping what's already there, including architecture, data flow, and technical debt, before writing a single line of new code.",
     },
     {
       step: "S2",
@@ -323,9 +323,9 @@ export const process = {
 
 export const about = {
   heading:
-    "We're a collective of strategists, designers, and engineers empowering ambitious businesses with technology built for scale, impact, and exceptional user experience — solving real problems with creativity, collaboration, and measurable results.",
+    "We're a collective of strategists, designers, and engineers empowering ambitious businesses with technology built for scale, impact, and exceptional user experience, solving real problems with creativity, collaboration, and measurable results.",
   vision:
-    "Our vision is to lead digital transformation for tomorrow's enterprises using modern technology, design thinking, and relentless innovation — creating benchmarks for quality, transparency, and genuine impact.",
+    "Our vision is to lead digital transformation for tomorrow's enterprises using modern technology, design thinking, and relentless innovation, creating benchmarks for quality, transparency, and genuine impact.",
   competencies: [
     { name: "System Architecture", tag: "Architecture" },
     { name: "Data Engineering", tag: "Data" },
@@ -387,14 +387,14 @@ export const careers = {
     stack: ["Kubernetes", "Terraform", "CI/CD", "AWS"],
   },
   outro:
-    "We're always on the lookout for exceptional talent. Send us a note about what you want to build — we read every message.",
+    "We're always on the lookout for exceptional talent. Send us a note about what you want to build. We read every message.",
 };
 
 export const faq = [
   {
     question: "What kind of projects does CommHawk take on?",
     answer:
-      "Everything from web and mobile platforms to AI integrations and full cloud infrastructure — see our services above for the full list.",
+      "Everything from web and mobile platforms to AI integrations and full cloud infrastructure. See our services above for the full list.",
   },
   {
     question: "Do you work with remote or international clients?",
@@ -409,12 +409,12 @@ export const faq = [
   {
     question: "How do we get started on a project?",
     answer:
-      "Send your project details through the contact form below, or reach out directly at commhawktechnologies@gmail.com — we read every message.",
+      "Send your project details through the contact form below, or reach out directly at commhawktechnologies@gmail.com. We read every message.",
   },
   {
     question: "Is CommHawk hiring?",
     answer:
-      "Yes — we're currently hiring a DevOps & Cloud Engineer, remote and full-time. Reach out if that's you.",
+      "Yes, we're currently hiring a DevOps & Cloud Engineer, remote and full-time. Reach out if that's you.",
   },
 ];
 
