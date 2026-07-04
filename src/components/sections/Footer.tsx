@@ -70,7 +70,7 @@ export function Footer() {
             {hero.wordmark}
           </p>
           <a
-            href="#top"
+            href="/"
             className="rounded-full border border-fg-32 px-6 py-3 text-label uppercase text-fg-64 hover:border-fg hover:text-fg"
           >
             Back to Home

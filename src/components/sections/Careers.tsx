@@ -7,7 +7,7 @@ import { careers } from "@/data/content";
 
 export function Careers() {
   return (
-    <section id="careers" className="relative overflow-hidden bg-bg py-32">
+    <section className="relative overflow-hidden bg-bg pt-44 pb-32">
       <SectionGlow />
       <Container>
         <Reveal>
@@ -47,7 +47,7 @@ export function Careers() {
               ))}
             </div>
           </div>
-          <Button href="#contact" variant="outline" className="w-fit shrink-0">
+          <Button href="/#contact" variant="outline" className="w-fit shrink-0">
             Reach Out
           </Button>
         </Reveal>

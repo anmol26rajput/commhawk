@@ -8,23 +8,25 @@ import { Clock } from "@/components/ui/Clock";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { nav } from "@/data/content";
 
-export function Nav() {
+export function Nav({ hasHero = true }: { hasHero?: boolean }) {
   const [open, setOpen] = useState(false);
-  const [overHero, setOverHero] = useState(true);
+  const [overHero, setOverHero] = useState(hasHero);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
 
   // The hero always stays dark (generative canvas backdrop), so the fixed
   // nav matches it (dark-scope) while overlapping the hero and switches to
-  // the page theme once scrolled past it.
+  // the page theme once scrolled past it. Pages without a hero (e.g.
+  // /careers) never force dark-scope, so the nav follows the normal theme.
   useEffect(() => {
+    if (!hasHero) return;
     function onScroll() {
       setOverHero(window.scrollY < window.innerHeight * 0.92);
     }
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [hasHero]);
 
   useEffect(() => {
     if (!open) return;
@@ -54,7 +56,7 @@ export function Nav() {
         aria-hidden="true"
       />
       <Container className="flex items-center justify-between py-9">
-        <a href="#top" aria-label="Home">
+        <a href="/" aria-label="Home">
           <Logo className="h-9 w-9" />
         </a>
 

@@ -74,24 +74,16 @@ function ProjectLink({
   );
 }
 
-// No real project screenshots are available for these builds, so each
-// thumbnail is a generated gradient tile keyed off the project's initial —
-// consistent, dependency-free, and honest about not having a live capture.
-function WorkThumbnail({ work, index }: { work: (typeof works)[number]; index: number }) {
-  const hueShift = index * 42;
+// Each card shows the project's real logo as a profile-picture-style avatar
+// (rather than a full website screenshot) — a white plate behind the mark so
+// every logo reads cleanly regardless of its own background color.
+function WorkThumbnail({ work }: { work: (typeof works)[number] }) {
   return (
-    <div
-      className="relative flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-card"
-      style={{
-        background: `linear-gradient(135deg, color-mix(in srgb, var(--color-accent) ${
-          28 + (index % 3) * 6
-        }%, var(--color-surface)) 0%, var(--color-surface) 70%)`,
-        filter: `hue-rotate(${hueShift}deg)`,
-      }}
-    >
-      <span className="text-[8rem] leading-none font-medium text-fg-16" style={{ filter: `hue-rotate(${-hueShift}deg)` }}>
-        {work.name.charAt(0)}
-      </span>
+    <div className="flex aspect-[4/3] w-full items-center justify-center rounded-card bg-surface">
+      <div className="flex h-40 w-40 items-center justify-center rounded-full bg-white p-7 shadow-[0_10px_40px_-6px_rgba(0,0,0,0.5)] sm:h-48 sm:w-48">
+        {/* eslint-disable-next-line @next/next/no-img-element -- fixed external brand logo, not a themable/optimizable local asset. */}
+        <img src={work.logo} alt={`${work.name} logo`} className="h-full w-full object-contain" />
+      </div>
     </div>
   );
 }
@@ -153,10 +145,10 @@ export function Works() {
                 <div className="relative">
                   {work.url ? (
                     <ProjectLink href={work.url} label={`Visit the live ${work.name} website`}>
-                      <WorkThumbnail work={work} index={i} />
+                      <WorkThumbnail work={work} />
                     </ProjectLink>
                   ) : (
-                    <WorkThumbnail work={work} index={i} />
+                    <WorkThumbnail work={work} />
                   )}
                 </div>
               </Reveal>

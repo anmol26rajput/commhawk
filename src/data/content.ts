@@ -9,11 +9,11 @@
 export const nav = {
   logoLabel: "CH",
   links: [
-    { index: "01", label: "Businesses", href: "#works" },
-    { index: "02", label: "Services", href: "#services" },
-    { index: "03", label: "About", href: "#about" },
-    { index: "04", label: "Careers", href: "#careers" },
-    { index: "05", label: "Connect", href: "#contact" },
+    { index: "01", label: "Businesses", href: "/#works" },
+    { index: "02", label: "Services", href: "/#services" },
+    { index: "03", label: "About", href: "/#about" },
+    { index: "04", label: "Careers", href: "/careers" },
+    { index: "05", label: "Connect", href: "/#contact" },
   ],
   email: "commhawktechnologies@gmail.com",
 };
@@ -41,7 +41,8 @@ export const works = [
     industry: ["Fintech"],
     services: ["Gamified Growth Platform", "Full-Stack Development"],
     status: "Live",
-    url: "https://thebefin.com/",
+    url: "https://www.thebefin.com/",
+    logo: "/logos/befin-logo.avif",
   },
   {
     name: "Trip N Roll Travel",
@@ -51,14 +52,16 @@ export const works = [
     services: ["Booking Platform", "Full-Stack Development"],
     status: "Live",
     url: "https://tripnrolltravel.com/",
+    logo: "/logos/tripnroll-logo.png",
   },
   {
     name: "Maytri ERP",
     description: "Industrial-grade ERP system for comprehensive resource planning and management.",
     industry: ["Enterprise Solutions"],
     services: ["ERP System", "Resource Planning"],
-    status: "Case Study",
-    url: undefined,
+    status: "Live",
+    url: "https://maytri.netlify.app/login",
+    logo: "/logos/maytri-logo.svg",
   },
   {
     name: "Bihar Sahu Sabha",
@@ -66,8 +69,9 @@ export const works = [
       "Digital platform developed to connect, engage, and empower members of the Bihar Sahu community.",
     industry: ["Community Platform"],
     services: ["Community Engagement", "Full-Stack Development"],
-    status: "Case Study",
-    url: undefined,
+    status: "Live",
+    url: "https://www.bihartailiksahusabha.com/",
+    logo: "/logos/biharsahu-logo.png",
   },
   {
     name: "Kaamlee",
@@ -75,8 +79,9 @@ export const works = [
       "Custom white-label digital solution built for businesses looking to launch and scale under their own brand.",
     industry: ["White Label Solution"],
     services: ["White-Label Product", "Custom Branding"],
-    status: "Case Study",
-    url: undefined,
+    status: "Live",
+    url: "https://kaamlee.in/",
+    logo: "/logos/kaamlee-logo.png",
   },
 ] satisfies Array<{
   name: string;
@@ -85,6 +90,7 @@ export const works = [
   services: string[];
   status: string;
   url?: string;
+  logo: string;
 }>;
 
 export const services = [
@@ -330,7 +336,7 @@ export const about = {
   ],
 };
 
-/** Tech stack CommHawk builds on, plus official recognitions/endorsements. */
+/** Tech stack CommHawk builds on. */
 export const brands = [
   "Python",
   "Next.js",
@@ -346,10 +352,14 @@ export const brands = [
   "AWS",
   "Gunicorn",
   "Nginx",
-  "Startup India",
-  "Startup Bihar",
-  "MSME",
-  "Govt. of Bihar",
+];
+
+/** Official recognitions/endorsements — badge images pulled from the live commhawk.in site. */
+export const recognitions = [
+  { name: "Startup India", src: "/recognition/StartupIndia.png" },
+  { name: "Startup Bihar", src: "/recognition/StartupBihar.png" },
+  { name: "MSME, Govt. of India", src: "/recognition/msme.png" },
+  { name: "Govt. of Bihar", src: "/recognition/bihar.webp" },
 ];
 
 export const careers = {
@@ -410,11 +420,11 @@ export const contact = {
 export const footer = {
   blurb: "Leading the digital transformation with precision-engineered solutions. Built for scale, designed for excellence.",
   sitemap: [
-    { label: "About", href: "#about" },
-    { label: "Businesses", href: "#works" },
-    { label: "Services", href: "#services" },
-    { label: "Careers", href: "#careers" },
-    { label: "Connect", href: "#contact" },
+    { label: "About", href: "/#about" },
+    { label: "Businesses", href: "/#works" },
+    { label: "Services", href: "/#services" },
+    { label: "Careers", href: "/careers" },
+    { label: "Connect", href: "/#contact" },
   ],
   expertise: ["Web & Mobile", "AI & Analytics", "Cloud & DevOps"],
   location: "Technology Hub, India",
